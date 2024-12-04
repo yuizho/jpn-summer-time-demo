@@ -25,7 +25,7 @@ public class Main {
             LOGGER.info("MySQLコンテナが起動しました {}", mysqlContainer.getJdbcUrl());
 
             try (var conn = DriverManager.getConnection(
-                    "jdbc:mysql://127.0.0.1:" + mysqlContainer.getMappedPort(3306) + "/" + MYSQL_DB,
+                    "jdbc:mysql://127.0.0.1:" + mysqlContainer.getMappedPort(3306) + "/" + MYSQL_DB + "?serverTimezone=Asia/Tokyo",
                     MYSQL_USER,
                     MYSQL_PASSWORD
             );) {
